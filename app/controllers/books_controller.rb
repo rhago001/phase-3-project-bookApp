@@ -4,6 +4,6 @@ class BooksController < ApplicationController
         render json: book, except:[:created_at, :updated_at]
     end
 
-    def 
+
 
 end
