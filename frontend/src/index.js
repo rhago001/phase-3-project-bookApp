@@ -1,6 +1,6 @@
 // console.log("We're in!")
 
-const URL = 'http://localhost:3000/users/2'
+const URL = 'http://localhost:3000/users/4'
 
 document.addEventListener('DOMContentLoaded', () => {
  console.log('we r in')
