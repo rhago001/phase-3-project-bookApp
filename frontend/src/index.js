@@ -45,7 +45,7 @@ function displayInfo (book) {
 			bookImage.src= book.image
 
 	let bookAuthor=document.getElementById('book-author')
-			bookAuthor.innerText= book.author
+			bookAuthor.innerText= `Written By: ${book.author}`
 
 	let bookPages=document.getElementById('book-pages')
 			bookPages.innerText= "Page count: " + book.pages
