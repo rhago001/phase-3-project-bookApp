@@ -47,10 +47,11 @@ function displayInfo (book) {
 	let bookAuthor=document.getElementById('book-author')
 			bookAuthor.innerText= book.author
 
-	let bookPages=document.createElement('h5')
-			bookPages.className= 'book-details'
-			bookPages.innerText= book.pages
+	let bookPages=document.getElementById('book-pages')
+			bookPages.innerText= "Page count: " + book.pages
 
-		infoContainer.appendChild(bookPages)
+		// infoContainer.appendChild(bookPages)
+	let bookSummary=document.getElementById('book-summary')
+			bookSummary.textContent = book.summary
 
 }
