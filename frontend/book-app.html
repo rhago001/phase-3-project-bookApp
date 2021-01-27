@@ -1,12 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book App</title>
-  <script src="src/index.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <script defer type="text/javascript" src="src/index.js"></script>
 </head>
-<body>
-  
-</body>
+  <body>
+    <header id="container">
+      <h1>YourBooklist</h1>
+      <nav>
+        <ul id="list">
+          <!-- <li></li> -->
+          <!-- <li>Don't worry about</li>
+          <li>This menu unless</li>
+          <li>You get to Advanced Deliverables</li>
+          <li>book Name</li>
+          <li>Another book Name</li>
+          <li>And Another book Name</li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div  id="info-container" class="book-details">
+        <h2 id="book-title">book Title Goes Here</h2>
+        <h3 id="book-author"></h3>
+        <img id='image' src="assets/image-placeholder.jpg">
+
+        <form  id="text-form" class="description">
+          <textarea name="des">book description goes here</textarea>
+          <button>Update book</button>
+        </form>
+
+        <h3>Leave a Review</h3>
+        <form class="review-form">
+          <textarea></textarea>
+          <input type="submit" value="Submit">
+        </form>
+
+        <h3>Customer Reviews</h3>
+        <ul  id="book-review" class="reviews">
+        
+        </ul>
+      </div>
+    </main>
+  </body>
 </html>
