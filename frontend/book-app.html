@@ -7,11 +7,76 @@
         <title>Book-App</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script src="src/index.js"></script>
     </head>
     <body>
+      <div>
         
         
+        <h1 class="text-center">Welcome to your book list!!</h1>
+      </div>
+      
+    </div id= "current-book-list ">
+        <h3>Here are your current books</h3>
+        <ul>
+          <li></li>
+        </ul>
+      <div>
+          
+          <div class="container">
+              <form class="new-book-form">
+                <p class="h3">Add a Book!</p>
+                  
+                  <input
+                  type="text"
+                  name="bookTitle"
+                  value=""
+                  placeholder="Enter a books title..."
+                  class="input-text"
+                  />
+                  <br/>
+                  <br/>
+                  <input
+                  type="text"
+                  name="bookImage"
+                  value=""
+                  placeholder="Enter a book's image URL..."
+                  class="input-text"
+                  />
+                  <br/>
+                  <br/>
+                  <input
+                  type="submit"
+                  name="submit"
+                  value="Add a book to your list"
+                  class="submit"
+                  />
+                  <br/>
+                  <br/>
+                  <img
+                  src=https://images.pexels.com/photos/2128249/pexels-photo-2128249.jpeg?auto=compress&cs=tinysrgb&dpr=4&h=90&w=145 
+                  alt="bookshelf"
+                />
+            </form>
+          </div>
+
+          
+          <!-- <div class="card" style="width: 25rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+      
+
+          
+          <!-- <p style="text-align:center">
+            Andy needs your help! <button id="new-toy-btn">Add a new toy!</button>
+          </p>
+      
+          <div id="toy-collection"></div> -->
     </body>
 </html>
