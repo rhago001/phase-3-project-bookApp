@@ -3,8 +3,9 @@ class UsersController < ApplicationController
     def show 
         user = User.find_by(id: params[:id])
         if user
-        render json: {id: user.id, name: user.name, email: user.email}
-        else  
+        render json:user, except:[:created_at, :updated_at],include: {books: {except:[:created_at, :updated_at]}}
+        # user,include: :books
+            else  
         render json: {messege: "Sorry but there is noone here :-(" }
         end
     end
