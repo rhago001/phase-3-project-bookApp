@@ -9,6 +9,21 @@ body {
   text-align: center;
   background-color: rgb(49, 109, 179);
 }
+
+
+.heading {
+  background-color: #172b4b;
+  /* font: 15px Arial, sans-serif, white; */
+  margin-bottom: 20px;
+  padding: 5px 0px 5px 15px;
+}
+.heading h3{
+  font: 20px Arial, sans-serif;
+  color:  white;
+  text-align: center;
+
+}
+
 header {
   float: left;
   width: 300px;

@@ -18,6 +18,7 @@ const renderUser = (user) => {
 
 		// console.log(user)
 		// let bookSpan=document.createElement('span')
+		
 		let bookContainer= document.querySelector('#list')
 
 				user.books.forEach( book => {
