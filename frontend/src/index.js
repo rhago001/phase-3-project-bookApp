@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const renderUser = (user) => {
 
 		// console.log(user)
+		// let bookSpan=document.createElement('span')
+		
 		let bookContainer= document.querySelector('#list')
 
 				user.books.forEach( book => {
@@ -27,10 +29,12 @@ const renderUser = (user) => {
 			displayInfo(book)
 
 		})
-		
+	// bookSpan.appenChild(bookLi)	
 					bookContainer.appendChild(bookLi)
 			})
 
+
+			
 
 }
 	

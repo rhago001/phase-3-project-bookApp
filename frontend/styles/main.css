@@ -5,6 +5,24 @@ body {
   font-size: 14px;
   color: #404040;
 }
+.logo{
+  text-align: center;
+  background-color: rgb(49, 109, 179);
+}
+
+
+.heading {
+  background-color: #172b4b;
+  /* font: 15px Arial, sans-serif, white; */
+  margin-bottom: 20px;
+  padding: 5px 0px 5px 15px;
+}
+.heading h3{
+  font: 20px Arial, sans-serif;
+  color:  white;
+  text-align: center;
+
+}
 
 header {
   float: left;
@@ -109,3 +127,15 @@ textarea {
   padding: 20px;
   margin-bottom: 20px;
 }
+
+/* #character-bar span {
+  padding: 1%;
+  height: 80%;
+  width: 8vw;
+  display: flex;
+  justify-content: center;
+  font-size: 3vh;
+  align-items: center;
+  border-radius: 2em;
+  border: 1px solid white;
+} */
