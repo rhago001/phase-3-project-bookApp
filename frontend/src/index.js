@@ -63,6 +63,12 @@ function displayInfo(book) {
 	let bookSummary=document.getElementById('book-summary')
 			bookSummary.textContent = book.summary
 	
+
+
+
+			let bookId = document.getElementById('bookId')
+			bookId.value = book.id
+	
 	
 }
 
@@ -70,11 +76,12 @@ function createButtons(book){
 const deleteBook=document.getElementById('delete-book')
 			let deleteBtn= document.createElement('button')
 			deleteBtn.textContent="Delete"
+			deleteBtn.addEventListener('click', (event) => {
+				
+				// console.log("am clicked")
+			})
 
-		deleteBtn.addEventListener('click', () => { 
-			console.log(book)
-
-		})
+		
 
 		let editBtn= document.createElement('button')
 				editBtn.textContent= "Edit Book"
@@ -113,11 +120,13 @@ let bookForm = document.getElementById('book-form')
 
 }
 
-function deleteBook(book) {
-	fetch(bookURL`/${book.id}`, {
-		method: 'DELETE'
-	}) 
-	.then(response => console.log(response))
+// function deleteBook(book,event) {
+// 	debugger
+// 	console.log(book,event)
+// 	fetch(bookURL`/${book.id}`, {
+// 		method: 'DELETE'
+// 	}) 
+// 	.then(response => console.log(response))
 	
 
-}
+// }
