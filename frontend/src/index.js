@@ -70,7 +70,7 @@ function displayInfo(book) {
 
 			let bookId = document.getElementById('bookId')
 			bookId.value = book.id
-	
+	// debugger 
 	
 }
 
@@ -79,7 +79,7 @@ const deleteBook=document.getElementById('delete-book')
 			deleteBook.innerHTML = ""
 			let deleteBtn= document.createElement('button')
 			deleteBtn.textContent="Delete"
-	console.log(book)
+
 		deleteBtn.addEventListener('click', () => { 
 			fetch(`${bookURL}/${book.id}`, {
 				method: 'DELETE'
@@ -88,11 +88,59 @@ const deleteBook=document.getElementById('delete-book')
 		
 		})
 
+		
+		
+		
+		
 		let editBtn= document.createElement('button')
-				editBtn.textContent= "Edit Book"
+		editBtn.textContent= "Edit Book"
+		
+		editBtn.addEventListener('click', (event) =>{
+			console.log("am edit, clicked")
 
-			deleteBook.append(deleteBtn, editBtn)
-}
+
+			
+	let bookForm = document.getElementById('book-form')
+
+  bookForm.title.value= book.title
+  bookForm.author.value = book.author
+  bookForm.pages.value = book.pages
+  bookForm.summary.value = book.summary
+  bookForm.image.value = book.image
+
+			let editBook = {
+				title: event.target.title.value,
+				author: event.target.author.value,
+				pages: event.target.pages.value,
+				summary: event.target.summary.value,
+				image: event.target.image.value,
+				user_id: 4
+			}
+			
+			
+			let reqPack = {
+				method: "PATCH",
+				headers: {"Content-Type": "application/json"},
+				body: JSON.stringify(editBook)
+			}
+			
+			//console.log(bookData)
+			fetch(bookURL, reqPack)
+			.then(response => response.json())
+			.then(editedInfo => displayInfo(editedInfo))
+		
+			bookForm.reset()
+			
+		})
+		deleteBook.append(deleteBtn, editBtn)
+	}
+
+
+
+
+
+
+
 
 function createBook() {
 
@@ -121,15 +169,9 @@ let bookForm = document.getElementById('book-form')
 		fetch(bookURL, reqPack)
 		.then(response => response.json())
 		.then(newBook => displayInfo(newBook))
+
 	})
+	bookForm.reset()
 
-}
+	}
 
-function deleteBook(book) {
-	fetch(bookURL`/${book.id}`, {
-		method: 'DELETE'
-	}) 
-	.then(response => response.json())
-	
-
-// }

@@ -24,7 +24,7 @@ body {
 
 
 .heading {
-  background-color: #8a7b43;
+  background-color: #19164d;
   margin-bottom: 20px;
   padding: 5px 0px 5px 15px;
 }
@@ -103,12 +103,28 @@ main {
   text-align: center;
 }
  .book-details #delete-book{
-  text-align: center;
+  text-align: center ;
+
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  
+  color: rgb(21, 9, 54);
+  padding: 7px 10px;
+  cursor: pointer;
 
  }
 
   .margin-flex {
     text-align: center;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #1b2450;
+    color: rgb(247, 240, 240);
+    padding: 7px 10px;
+    cursor: pointer;
   }
 
 .book-details img {
@@ -137,7 +153,7 @@ textarea {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  background-color: #f1a458;
+  background-color: #423b72;
   color: #fff;
   padding: 7px 10px;
   cursor: pointer;
