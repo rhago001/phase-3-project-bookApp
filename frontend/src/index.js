@@ -1,16 +1,19 @@
 const URL = 'http://localhost:3000/users/4'
 const bookURL ='http://localhost:3000/books'
 
+
 document.addEventListener('DOMContentLoaded', () => {
   getBooks()
 	createButtons()
 	createBook()
+	
 })
 
  function getBooks(){
 	fetch(URL)
 		.then(res => res.json())
 		.then(userdata => renderUser(userdata))
+		
 		
 }
 
@@ -30,7 +33,7 @@ const renderUser = (user) => {
 
 		bookLi.addEventListener('click', () => {
 			displayInfo(book)
-
+			
 		})
 
 		
@@ -43,7 +46,7 @@ const renderUser = (user) => {
 	
 function displayInfo(book) {
 
-	const infoContainer= document.getElementById("info-container") 
+	const infoContainer= document.getElementById("info-container")
 
 	let bookTitle= document.getElementById('book-title')
 			bookTitle.innerText = book.title 
@@ -60,13 +63,18 @@ function displayInfo(book) {
 	let bookSummary=document.getElementById('book-summary')
 			bookSummary.textContent = book.summary
 	
-
+	
 }
 
-function createButtons(){
+function createButtons(book){
 const deleteBook=document.getElementById('delete-book')
 			let deleteBtn= document.createElement('button')
 			deleteBtn.textContent="Delete"
+
+		deleteBtn.addEventListener('click', () => { 
+			console.log(book)
+
+		})
 
 		let editBtn= document.createElement('button')
 				editBtn.textContent= "Edit Book"
@@ -82,13 +90,13 @@ let bookForm = document.getElementById('book-form')
 		console.log(event, "Clicked")
 
 		let bookData = {
-	 
+			
 			title: event.target.title.value,
 			author: event.target.author.value,
 			pages: event.target.pages.value,
 			summary: event.target.summary.value,
-			image: event.target.image.value
-			
+			image: event.target.image.value,
+			user_id: 4
 		}
 		
 		let reqPack = {
@@ -98,10 +106,18 @@ let bookForm = document.getElementById('book-form')
 		}
 
 			console.log(bookData)
-		fetch(URL, reqPack)
+		fetch(bookURL, reqPack)
 		.then(response => response.json())
 		.then(newBook => displayInfo(newBook))
 	})
 
+}
+
+function deleteBook(book) {
+	fetch(bookURL`/${book.id}`, {
+		method: 'DELETE'
+	}) 
+	.then(response => console.log(response))
+	
 
 }
