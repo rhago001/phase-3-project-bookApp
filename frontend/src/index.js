@@ -1,10 +1,10 @@
-// console.log("We're in!")
-
 const URL = 'http://localhost:3000/users/4'
+const bookURL ='http://localhost:3000/books'
 
 document.addEventListener('DOMContentLoaded', () => {
   getBooks()
-
+	createButtons()
+	createBook()
 })
 
  function getBooks(){
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const renderUser = (user) => {
 
-		// console.log(user)
 		// let bookSpan=document.createElement('span')
 
 
@@ -34,18 +33,15 @@ const renderUser = (user) => {
 
 		})
 
-	
-				// deleteBtn
-
-	// bookSpan.appenChild(bookLi)	
-					bookContainer.appendChild(bookLi)
-			})
+		
+		bookContainer.appendChild(bookLi)
+	})
 
 			
 
 }
 	
-function displayInfo (book) {
+function displayInfo(book) {
 
 	const infoContainer= document.getElementById("info-container") 
 
@@ -61,12 +57,14 @@ function displayInfo (book) {
 	let bookPages=document.getElementById('book-pages')
 			bookPages.innerText= "Page count: " + book.pages
 
-		// infoContainer.appendChild(bookPages)
 	let bookSummary=document.getElementById('book-summary')
 			bookSummary.textContent = book.summary
+	
 
+}
 
-			const deleteBook=document.getElementById('delete-book')
+function createButtons(){
+const deleteBook=document.getElementById('delete-book')
 			let deleteBtn= document.createElement('button')
 			deleteBtn.textContent="Delete"
 
@@ -74,8 +72,36 @@ function displayInfo (book) {
 				editBtn.textContent= "Edit Book"
 
 			deleteBook.append(deleteBtn, editBtn)
+}
 
+function createBook() {
 
-	
+let bookForm = document.getElementById('book-form')
+	bookForm.addEventListener('submit', (event) => {
+		event.preventDefault()
+		console.log(event, "Clicked")
+
+		let bookData = {
+	 
+			title: event.target.title.value,
+			author: event.target.author.value,
+			pages: event.target.pages.value,
+			summary: event.target.summary.value,
+			image: event.target.image.value
+			
+		}
+		
+		let reqPack = {
+		method: "POST",
+		headers: {"Content-Type": "application/json"},
+		body: JSON.stringify(bookData)
+		}
+
+			console.log(bookData)
+		fetch(URL, reqPack)
+		.then(response => response.json())
+		.then(newBook => displayInfo(newBook))
+	})
+
 
 }
