@@ -4,7 +4,7 @@ const bookURL ='http://localhost:3000/books'
 
 document.addEventListener('DOMContentLoaded', () => {
   getBooks()
-	createButtons()
+	//createButtons()
 	createBook()
 	
 })
@@ -62,6 +62,8 @@ function displayInfo(book) {
 
 	let bookSummary=document.getElementById('book-summary')
 			bookSummary.textContent = book.summary
+			
+			createButtons(book, infoContainer)
 	
 
 
@@ -72,16 +74,19 @@ function displayInfo(book) {
 	
 }
 
-function createButtons(book){
+function createButtons(book, infoContainer){
 const deleteBook=document.getElementById('delete-book')
+			deleteBook.innerHTML = ""
 			let deleteBtn= document.createElement('button')
 			deleteBtn.textContent="Delete"
-			deleteBtn.addEventListener('click', (event) => {
-				
-				// console.log("am clicked")
-			})
-
+	console.log(book)
+		deleteBtn.addEventListener('click', () => { 
+			fetch(`${bookURL}/${book.id}`, {
+				method: 'DELETE'
+			}) 
+			document.querySelector('#deleted-message').innerText = "This book has been deleted."
 		
+		})
 
 		let editBtn= document.createElement('button')
 				editBtn.textContent= "Edit Book"
@@ -94,7 +99,7 @@ function createBook() {
 let bookForm = document.getElementById('book-form')
 	bookForm.addEventListener('submit', (event) => {
 		event.preventDefault()
-		console.log(event, "Clicked")
+		//console.log(event, "Clicked")
 
 		let bookData = {
 			
@@ -112,7 +117,7 @@ let bookForm = document.getElementById('book-form')
 		body: JSON.stringify(bookData)
 		}
 
-			console.log(bookData)
+			//console.log(bookData)
 		fetch(bookURL, reqPack)
 		.then(response => response.json())
 		.then(newBook => displayInfo(newBook))
@@ -120,13 +125,11 @@ let bookForm = document.getElementById('book-form')
 
 }
 
-// function deleteBook(book,event) {
-// 	debugger
-// 	console.log(book,event)
-// 	fetch(bookURL`/${book.id}`, {
-// 		method: 'DELETE'
-// 	}) 
-// 	.then(response => console.log(response))
+function deleteBook(book) {
+	fetch(bookURL`/${book.id}`, {
+		method: 'DELETE'
+	}) 
+	.then(response => response.json())
 	
 
 // }
