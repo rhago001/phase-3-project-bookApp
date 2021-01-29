@@ -1,9 +1,21 @@
+
+
 body {
+  /* background-image: url("../images/background.jpeg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%; 
+ 
+}
+
+body {
+
+
   box-sizing: border-box;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  color: #404040;
+  color: #1b1b30;
 }
 .logo{
   text-align: center;
@@ -12,14 +24,15 @@ body {
 
 
 .heading {
-  background-color: #172b4b;
-  /* font: 15px Arial, sans-serif, white; */
+  background-color: #8a7b43;
   margin-bottom: 20px;
   padding: 5px 0px 5px 15px;
 }
-.heading h3{
-  font: 20px Arial, sans-serif;
-  color:  white;
+.heading h2{
+  font-family: 'Great Vibes', Bold;
+
+  font: 25px Arial, sans-serif;
+  color:  rgb(255, 255, 255);
   text-align: center;
 
 }
@@ -33,12 +46,13 @@ header {
   border-radius: 0 0 6px 0;
   padding: 10px;
   margin-right: 10px;
+  
 }
 
 h1 {
   font-family: 'Great Vibes', Bold;
   font-size: 52px;
-  color: #723417;
+  color: #22224d;
   margin: 10px 0;
 }
 h5{
@@ -88,6 +102,14 @@ main {
   font-size: 24px;
   text-align: center;
 }
+ .book-details #delete-book{
+  text-align: center;
+
+ }
+
+  .margin-flex {
+    text-align: center;
+  }
 
 .book-details img {
   display: block;

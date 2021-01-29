@@ -2,21 +2,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Book App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:400,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/main.css" />
-  <script defer type="text/javascript" src="src/index.js"></script>
+  <script type="text/javascript" src="src/index.js"></script>
+  
 </head>
   <body>
-
+    <div class="background">
+    <!-- <script id= "backGround" src="src/index.js" ></script> -->
     <div class="heading">
       <div class='item'>
-        <h2 class="ui header">
-          <i class="orange ticket icon"></i>
           <div class="content">
-            <h3 id= "name">  NAME</h3>
+            <h2 id= "user-name">  NAME</h2>
+            
           </div>
           <div class="sub header" id="subtitle">
-               <h3>Welcome To Your Book Log </h3>
+               <h2>Welcome To Your Book List Diary</h2>
           </div>
         </h2>
       </div>
@@ -27,20 +30,40 @@
      -->
     <header id="container">
       <h1>YourBooklist</h1>
+      
       <nav>
         <ul id="list">
-          <!-- <li></li> -->
+          <!-- <i class="bi bi-trash"></i> -->
+
         
         </ul>
       </nav>
+      <div class="margin-flex">
+        <h4 class='center'>Create a Book</h4>
+        <form id='dog-form' class="padding margin border-round border-grey">
+          <br />
+          <input  type="text" name="title" placeholder="Book title" value="" />
+          <br /><br />
+          <input type="text" name="author" placeholder="Author" value="" />
+          <br /><br />
+          <input type="text" name="pages" placeholder="Number of pages" value="" />
+          <br /><br />
+          <input type="text" name="summary" placeholder="Book summary" value="" />
+          <br /><br />
+          <input type="text" name="image" placeholder="Image url" value="" />
+          <br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </header>
 
     <main>
       <div  id="info-container" class="book-details">
-        <h2 id="book-title">book Title Goes Here</h2>
+        <h2 id="book-title"></h2>
         <h3 id="book-author"></h3>
-        <img id='image' src="assets/image-placeholder.jpg">
+        <img id='image' src="images/book_image.jpg">
         <h5 id='book-pages'></h5>
+        <div id="delete-book" > </div>
         
 
         <form  id="text-form" class="description">
@@ -60,5 +83,6 @@
         </ul> -->
       </div>
     </main>
+  </div>
   </body>
 </html>

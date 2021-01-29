@@ -18,7 +18,11 @@ const renderUser = (user) => {
 
 		// console.log(user)
 		// let bookSpan=document.createElement('span')
-		
+
+
+		let headerUserName=document.getElementById('user-name')
+				headerUserName.innerText= "Hi!  " + user.name
+
 		let bookContainer= document.querySelector('#list')
 
 				user.books.forEach( book => {
@@ -29,10 +33,13 @@ const renderUser = (user) => {
 			displayInfo(book)
 
 		})
+
+	
+				// deleteBtn
+
 	// bookSpan.appenChild(bookLi)	
 					bookContainer.appendChild(bookLi)
 			})
-
 
 			
 
@@ -57,5 +64,18 @@ function displayInfo (book) {
 		// infoContainer.appendChild(bookPages)
 	let bookSummary=document.getElementById('book-summary')
 			bookSummary.textContent = book.summary
+
+
+			const deleteBook=document.getElementById('delete-book')
+			let deleteBtn= document.createElement('button')
+			deleteBtn.textContent="Delete"
+
+		let editBtn= document.createElement('button')
+				editBtn.textContent= "Edit Book"
+
+			deleteBook.append(deleteBtn, editBtn)
+
+
+	
 
 }
